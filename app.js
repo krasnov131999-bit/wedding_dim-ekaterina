@@ -155,9 +155,7 @@ function downloadJson(filename, data){
   URL.revokeObjectURL(url);
 }
 
-// Блок автоматического восстановления удалён – форма всегда будет пустой при загрузке.
-
-// Обработка отправки
+// Обработка отправки (без восстановления предыдущих ответов)
 form?.addEventListener("submit", (e) => {
   e.preventDefault();
 
