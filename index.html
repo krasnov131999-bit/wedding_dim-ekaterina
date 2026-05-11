@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Димитрий & Екатерина — свадьба</title>
+  <meta name="description" content="Приглашение на свадьбу: программа, локация, галерея и RSVP." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="На верх страницы">
+        <span class="brand__mark">D&E</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="nav__bars" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav__links" data-nav>
+        <a href="#story">История</a>
+        <a href="#details">Детали</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#gallery">Фото</a>
+        <a class="btn btn--small" href="#rsvp">RSVP</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="badge reveal">
+          <span class="badge__dot" aria-hidden="true"></span>
+          <span>Приглашение на свадьбу</span>
+        </div>
+
+        <h1 class="hero__title reveal">
+          Димитрий <span class="amp">&</span> Екатерина
+        </h1>
+
+        <p class="hero__subtitle reveal">
+          01 августа 2026 • Чебоксары
+        </p>
+
+        <div class="countdown reveal" aria-label="Отсчёт до дня свадьбы">
+          <div class="countdown__item">
+            <div class="countdown__num" data-dd>—</div>
+            <div class="countdown__label">дней</div>
+          </div>
+          <div class="countdown__item">
+            <div class="countdown__num" data-hh>—</div>
+            <div class="countdown__label">часов</div>
+          </div>
+          <div class="countdown__item">
+            <div class="countdown__num" data-mm>—</div>
+            <div class="countdown__label">минут</div>
+          </div>
+          <div class="countdown__item">
+            <div class="countdown__num" data-ss>—</div>
+            <div class="countdown__label">секунд</div>
+          </div>
+        </div>
+
+        <div class="hero__actions reveal">
+          <a class="btn" href="#rsvp">Подтвердить присутствие</a>
+          <a class="btn btn--ghost" href="#details">Смотреть детали</a>
+        </div>
+
+        <p class="hero__note reveal">
+          Дресс-код: природные оттенки, нежный шарм. Вся важная информация — сразу под этим приглашением 💚
+        </p>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint__line"></span>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" id="story">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Наша история</h2>
+          <p class="section__desc">Одна случайная встреча — и целая жизнь впереди ✨</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card reveal">
+            <h3 class="card__title">Как познакомились</h3>
+            <p class="card__text">
+              Мы встретились на послесвадебном вечере сестры Димы.  В тот день мы 
+проговорили до поздней ночи — и обоим стало ясно, что эта встреча всё изменила.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">Предложение</h3>
+            <p class="card__text">
+              Дима долго размышлял, как сделать этот момент по-настоящему незабываемым. И выбрал 
+              для самого важного вопроса не просто красивое место, а настоящую высоту — 51 этаж 
+              Москва-Сити. Слова пришли сами собой. Катя сказала «Да», и этот миг разделил нашу 
+              жизнь на «до» и «после».
+            </p>
+          </article>
+        </div>
+
+        <div class="quote reveal">
+          <p class="quote__text">«Любовь — это попытка двоих создать целый мир.»</p>
+          <p class="quote__meta">— Руми</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section class="section section--alt" id="details">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Детали</h2>
+          <p class="section__desc">Каждая мелочь продумана с любовью, чтобы вы чувствовали себя как дома 💫</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="info reveal">
+            <h3 class="info__title">Место</h3>
+            <p class="info__text">Банкетный комплекс «Пять Звезд», зал "Аурум"</p>
+            <p class="info__text muted">Адрес: проспект Максима Горького, 2М, г. Чебоксары</p>
+            <a class="link" href="#map">Схема проезда</a>
+          </article>
+
+          <article class="info reveal">
+            <h3 class="info__title">Дресс-код</h3>
+            <p class="info__text">Будем рады, если вы поддержите цветовую гамму нашей свадьбы в природной палитре</p>
+            <p class="info__text muted">Главное — вы, а цвет — приятный бонус для фотографа🌿</p>
+            <div class="swatches" aria-label="Палитра">
+              <span class="swatch" style="--c:#FDF4E3" title="Бежевый"></span>
+              <span class="swatch" style="--c:#FFDBE2" title="Нежно-розовый"></span>
+              <span class="swatch" style="--c:#95B08D" title="Оливковый"></span>
+              <span class="swatch" style="--c:#BDA69E" title="Бежево-песочный"></span>
+              <span class="swatch" style="--c:#7D6259" title="Темно-русый"></span>
+              <span class="swatch" style="--c:#3B221C" title="Темно-коричневый"></span>
+            </div>
+          </article>
+
+          <article class="info reveal">
+            <h3 class="info__title">Подарки</h3>
+            <p class="info__text">Лучший подарок — ваше присутствие.</p>
+            <p class="info__text muted">Если хочется — можно конверт или вклад в «мечту» (своё уютное гнездышко — дом или квартира).</p>
+          </article>
+        </div>
+
+        <div class="map-card reveal" id="map">
+          <div class="map-card__text">
+            <h3 class="map-card__title">Как добраться</h3>
+            <p class="map-card__desc">
+              Проспект Максима Горького, 2М, Чебоксары. Удобный подъезд с центра.
+            </p>
+            <div class="map-card__actions">
+              <a class="btn btn--small btn--ghost" href="https://yandex.ru/maps/45/cheboksary/house/prospekt_maksima_gorkogo_2m/YE4YdAdpQE0GQFtsfX11eHljYg==/?ll=47.210485%2C56.149580&z=18.5" target="_blank" rel="noreferrer">Открыть Я.Карты</a>
+              <a class="btn btn--small" href="#rsvp">RSVP</a>
+            </div>
+          </div>
+
+          <div class="map-card__frame" aria-label="Карта">
+            <iframe
+              title="Карта проезда — проспект Максима Горького, 2М, Чебоксары"
+              src="https://yandex.ru/map-widget/v1/?ll=47.210485%2C56.149580&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjQ1MjI3Mjg5EkzQoNC-0YHRgdC40Y8sINCn0YPQstCw0YjRgdC60LDRjyDQoNC10YHQv9GD0LHQu9C40LrQsCwg0KfQtdCx0L7QutGB0LDRgNGLLCDQv9GA0L7RgdC_0LXQutGCINCc0LDQutGB0LjQvNCwINCT0L7RgNGM0LrQvtCz0L4sIDLNnCIKDVhFQnNkVUZjbV9GQg%3D%3D&z=17.5"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="width:100%; height:100%; border:0;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section" id="schedule">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Расписание</h2>
+          <p class="section__desc">
+            Пусть каждый момент этого дня станет для нас драгоценным воспоминанием ✨
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-time">16:30 – 17:00</div>
+            <div class="tl-body">
+              <div class="tl-title">Сбор гостей</div>
+              <div class="tl-text">Лёгкий приветственный фуршет, шампанское и тёплые объятия. Самое время найти своё место и настроиться на праздник.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">17:00</div>
+            <div class="tl-body">
+              <div class="tl-title">Начало банкета</div>
+              <div class="tl-text">Первый тост, искренние слова и старт нашего общего вечера.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">18:30</div>
+            <div class="tl-body">
+              <div class="tl-title">Перерыв</div>
+              <div class="tl-text">Время перезагрузки: фотозона, общение и пара минут тишины.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">18:40</div>
+            <div class="tl-body">
+              <div class="tl-title">Поздравление родных</div>
+              <div class="tl-text">Самые тёплые слова от родителей, бабушек и дедушек. Будет трогательно.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">19:20</div>
+            <div class="tl-body">
+              <div class="tl-title">Открытие танцпола</div>
+              <div class="tl-text">Первая дискотека вечера — зажигаем под любимые хиты.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">20:00</div>
+            <div class="tl-body">
+              <div class="tl-title">Поздравления: мальчик / девочка</div>
+              <div class="tl-text">Весёлая традиция с гостями — угадываем, кто будет первым? Готовьте монетки и хорошее настроение.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">20:40</div>
+            <div class="tl-body">
+              <div class="tl-title">Продолжение танцев</div>
+              <div class="tl-text">Музыка громче, улыбки шире — танцуем до упаду.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">21:25</div>
+            <div class="tl-body">
+              <div class="tl-title">Танец с папой</div>
+              <div class="tl-text">Трогательный момент, который останется в сердце навсегда.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">21:30</div>
+            <div class="tl-body">
+              <div class="tl-title">Первый танец молодожёнов</div>
+              <div class="tl-text">Под дымку и свет софитов — наш первый танец в новом статусе.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">21:45</div>
+            <div class="tl-body">
+              <div class="tl-title">Семейный очаг & ответное слово</div>
+              <div class="tl-text">Зажжение свечи, подарки родителям и слова благодарности. Самый душевный момент вечера.</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-time">22:00</div>
+            <div class="tl-body">
+              <div class="tl-title">Бенгальские огни</div>
+              <div class="tl-text">Фееричный финал! Выходим на улицу, зажигаем огоньки и кричим «Горько!».</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Фотографии</h2>
+          <p class="section__desc">Мгновения, полные тепла, улыбок и любви — наша галерея счастья 📸</p>
+        </div>
+
+        <div class="gallery">
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 1" loading="lazy"
+                 src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80">
+          </a>
+
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 2" loading="lazy"
+                 src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80">
+          </a>
+
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1523438097208-7f0b3f2f1b66?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 3" loading="lazy"
+                 src="https://images.unsplash.com/photo-1523438097208-7f0b3f2f1b66?auto=format&fit=crop&w=1200&q=80">
+          </a>
+
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1529781917243-7f2da8b1d8b1?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 4" loading="lazy"
+                 src="https://images.unsplash.com/photo-1529781917243-7f2da8b1d8b1?auto=format&fit=crop&w=1200&q=80">
+          </a>
+
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1529635001785-1f3e66e4e4b0?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 5" loading="lazy"
+                 src="https://images.unsplash.com/photo-1529635001785-1f3e66e4e4b0?auto=format&fit=crop&w=1200&q=80">
+          </a>
+
+          <a class="g-item reveal" href="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9?auto=format&fit=crop&w=2000&q=80" data-lightbox>
+            <img alt="Фото 6" loading="lazy"
+                 src="https://images.unsplash.com/photo-1523437237164-d442d57cc3c9?auto=format&fit=crop&w=1200&q=80">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">RSVP</h2>
+          <p class="section__desc">
+            Пара кликов — и вы с нами. Укажите, сколько вас будет, а в комментарии можно 
+            написать про аллергии, любимый напиток или просто пару тёплых слов
+          </p>
+        </div>
+
+        <div class="rsvp">
+          <form class="form reveal" id="rsvpForm" autocomplete="on">
+            <div class="field">
+              <label for="name">Имя и фамилия</label>
+              <input id="name" name="name" type="text" placeholder="Например: Иван Петров" required />
+            </div>
+
+            <div class="field">
+              <label for="attendance">Присутствие</label>
+              <select id="attendance" name="attendance" required>
+                <option value="yes">Да, буду</option>
+                <option value="no">К сожалению, не смогу</option>
+                <option value="maybe">Пока не знаю</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="guests">Сколько вас будет?</label>
+              <input id="guests" name="guests" type="number" min="1" max="5" value="1" />
+            </div>
+
+            <div class="field field--full">
+              <label for="note">Комментарий (аллергии, предпочтения по напиткам, пожелания)</label>
+              <textarea id="note" name="note" rows="4" placeholder="Например: не ем рыбу, пью только белое сухое, или просто — очень ждём!"></textarea>
+            </div>
+
+            <div class="form__actions field--full">
+              <button class="btn" type="submit">Отправить</button>
+              <button class="btn btn--ghost" type="button" id="downloadRsvp">Скачать ответ (JSON)</button>
+            </div>
+
+            <p class="form__hint field--full" id="rsvpStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="side reveal">
+            <div class="side__card">
+              <h3 class="side__title">Контакты</h3>
+              <p class="side__text muted">Если потерялись или хотите уточнить — пишите, мы на связи:</p>
+              <p class="side__text">
+                Димитрий: <a class="link" href="tel:+79692842686">+7 (969) 284-26-86</a><br>
+                Екатерина: <a class="link" href="tel:+79520246196">+7 (952) 024-61-96</a>
+              </p>
+              <p class="side__text" style="margin-top:10px;">
+                Telegram:<br>
+                <a class="link" href="https://t.me/GeneralC7m" target="_blank" rel="noreferrer">@GeneralC7m</a> — Димитрий<br>
+                <a class="link" href="https://t.me/KataliinaM" target="_blank" rel="noreferrer">@KataliinaM</a> — Екатерина
+              </p>
+              <p class="side__text" style="margin-top:10px;">
+                <span class="muted">Организатор:</span><br>
+                <a class="link" href="https://t.me/e_katrrin" target="_blank" rel="noreferrer">@e_katrrin</a> — Екатерина<br>
+                <a class="link" href="tel:+79677919381">+7 (967) 791-93-81</a>
+              </p>
+            </div>
+
+            <div class="side__card side__card--soft">
+              <h3 class="side__title">Важно</h3>
+              <p class="side__text">
+                Пожалуйста, подтвердите ответ до <strong>01.07.2026</strong>.
+              </p>
+              <p class="side__text muted">
+                Мы очень ждём встречи и готовим для вас тёплый, душевный праздник 💛
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">Димитрий & Екатерина</div>
+          <div class="footer__muted">С любовью • 2026</div>
+        </div>
+        <div class="footer__right">
+          <a class="link" href="#top">Наверх</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">×</button>
+    <img class="lightbox__img" alt="Фото в полном размере" />
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
