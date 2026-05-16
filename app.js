@@ -2,13 +2,12 @@
 const WEDDING_DATE = "2026-08-01T16:00:00+03:00";
 const STORAGE_KEY = "wedding_rsvp_v1";
 
-// ===== Google Forms =====
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1s7Eo6qzYL_iM1WGPgvxPg9F7DvcC1Ru9BWJpkJLOV5E/formResponse";
+// ===== Google Forms (поле guests удалено) =====
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/1s7Eo6qzYL_iM1WGPgvxPg9F7DvcC1Ru9BWJpkJLOV5E/formResponse";
 const FIELD_IDS = {
-  name:       "entry.1923451685",
-  attendance: "entry.924176924",
-  guests:     "entry.221307178",   // Больше не показываем, но отправляем 1
-  note:       "entry.550404454"
+  name:       "entry.1923451685",   // Имя и фамилия
+  attendance: "entry.924176924",    // Присутствие
+  note:       "entry.550404454"     // Комментарий
 };
 
 const GOOGLE_ATTENDANCE_MAP = {
@@ -76,7 +75,7 @@ function tick(){
 tick();
 setInterval(tick, 1000);
 
-// ===== Lightbox (оставлен, хотя фото нет) =====
+// ===== Lightbox (оставлен) =====
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox__img");
 const lightboxClose = lightbox?.querySelector(".lightbox__close");
@@ -138,7 +137,7 @@ function downloadJson(filename, data){
   URL.revokeObjectURL(url);
 }
 
-// Обработка отправки (поле guests скрыто, но отправляем 1)
+// Обработка отправки (без поля guests)
 form?.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -161,7 +160,6 @@ form?.addEventListener("submit", (e) => {
   const formData = new FormData();
   formData.append(FIELD_IDS.name, data.name);
   formData.append(FIELD_IDS.attendance, googleAttendance);
-  formData.append(FIELD_IDS.guests, '1');   // всегда 1
   formData.append(FIELD_IDS.note, data.note);
 
   setStatus("Отправляем ваш ответ...");
