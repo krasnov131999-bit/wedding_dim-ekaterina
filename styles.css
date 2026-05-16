@@ -143,10 +143,10 @@ a{ color:inherit; text-decoration:none; }
 .hero__bg{
   position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(251,248,243,.25), rgba(244,239,231,.85)),
+    linear-gradient(180deg, rgba(251,248,243,.25), rgba(244,239,231,.95)),
     url("https://drive.google.com/uc?export=view&id=14hsB5K5NKdZNhf0NUPgFIUb_p5vGTXXD");
-  background-size: auto 120%;       /* масштабирование по высоте, чтобы было видно нужную часть */
-  background-position: 80% 100%;    /* фокус на правой нижней части фото */
+  background-size: cover;
+  background-position: center;
   filter:saturate(.9) contrast(.95);
   transform: scale(1.06);
 }
