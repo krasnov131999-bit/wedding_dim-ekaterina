@@ -1,17 +1,16 @@
 // ===== Настройки =====
-const WEDDING_DATE = "2026-08-01T16:00:00+03:00"; // Синхронизировано с 01 августа 2026
+const WEDDING_DATE = "2026-08-01T16:00:00+03:00";
 const STORAGE_KEY = "wedding_rsvp_v1";
 
-// ===== Google Forms (данные из твоей формы) =====
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/1s7Eo6qzYL_iM1WGPgvxPg9F7DvcC1Ru9BWJpkJLOV5E/formResponse";
+// ===== Google Forms =====
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1s7Eo6qzYL_iM1WGPgvxPg9F7DvcC1Ru9BWJpkJLOV5E/formResponse";
 const FIELD_IDS = {
-  name:       "entry.1923451685",   // Имя и фамилия
-  attendance: "entry.924176924",    // Присутствие
-  guests:     "entry.221307178",    // Сколько вас будет?
-  note:       "entry.550404454"     // Комментарий
+  name:       "entry.1923451685",
+  attendance: "entry.924176924",
+  guests:     "entry.221307178",   // Больше не показываем, но отправляем 1
+  note:       "entry.550404454"
 };
 
-// Сопоставление: значение из формы сайта -> текст, который принимает Google Форма
 const GOOGLE_ATTENDANCE_MAP = {
   "yes":   "Да, буду",
   "no":    "К сожалению, не смогу",
@@ -38,13 +37,11 @@ if (toggleBtn && nav) {
 
 // ===== Reveal on scroll =====
 const revealEls = Array.from(document.querySelectorAll(".reveal"));
-
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add("is-visible");
   });
 }, { threshold: 0.12 });
-
 revealEls.forEach(el => io.observe(el));
 
 // ===== Countdown =====
@@ -52,15 +49,12 @@ const dd = document.querySelector("[data-dd]");
 const hh = document.querySelector("[data-hh]");
 const mm = document.querySelector("[data-mm]");
 const ss = document.querySelector("[data-ss]");
-
 const target = new Date(WEDDING_DATE);
 
 function pad(n){ return String(n).padStart(2, "0"); }
-
 function tick(){
   const now = new Date();
   let diff = target.getTime() - now.getTime();
-
   if (diff <= 0) {
     if (dd) dd.textContent = "0";
     if (hh) hh.textContent = "00";
@@ -68,7 +62,6 @@ function tick(){
     if (ss) ss.textContent = "00";
     return;
   }
-
   const sec = Math.floor(diff / 1000);
   const days = Math.floor(sec / (3600 * 24));
   const hours = Math.floor((sec % (3600 * 24)) / 3600);
@@ -80,11 +73,10 @@ function tick(){
   if (mm) mm.textContent = pad(mins);
   if (ss) ss.textContent = pad(secs);
 }
-
 tick();
 setInterval(tick, 1000);
 
-// ===== Lightbox =====
+// ===== Lightbox (оставлен, хотя фото нет) =====
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox?.querySelector(".lightbox__img");
 const lightboxClose = lightbox?.querySelector(".lightbox__close");
@@ -96,7 +88,6 @@ function openLightbox(src){
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
-
 function closeLightbox(){
   if (!lightbox || !lightboxImg) return;
   lightbox.classList.remove("is-open");
@@ -104,14 +95,12 @@ function closeLightbox(){
   lightboxImg.src = "";
   document.body.style.overflow = "";
 }
-
 document.querySelectorAll("[data-lightbox]").forEach(a => {
   a.addEventListener("click", (e) => {
     e.preventDefault();
     openLightbox(a.getAttribute("href"));
   });
 });
-
 lightboxClose?.addEventListener("click", closeLightbox);
 lightbox?.addEventListener("click", (e) => {
   if (e.target === lightbox) closeLightbox();
@@ -128,21 +117,15 @@ const downloadBtn = document.getElementById("downloadRsvp");
 function setStatus(text){
   if (statusEl) statusEl.textContent = text;
 }
-
 function loadSaved(){
   try{
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw);
-  }catch{
-    return null;
-  }
+    return raw ? JSON.parse(raw) : null;
+  }catch{ return null; }
 }
-
 function save(data){
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data, null, 2));
 }
-
 function downloadJson(filename, data){
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -155,14 +138,13 @@ function downloadJson(filename, data){
   URL.revokeObjectURL(url);
 }
 
-// Обработка отправки (без восстановления предыдущих ответов)
+// Обработка отправки (поле guests скрыто, но отправляем 1)
 form?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const data = {
     name: form.name.value.trim(),
     attendance: form.attendance.value,
-    guests: Number(form.guests.value || 1),
     note: form.note.value.trim(),
     savedAt: new Date().toISOString()
   };
@@ -172,17 +154,14 @@ form?.addEventListener("submit", (e) => {
     return;
   }
 
-  // Сохраняем локально (для возможности скачать JSON)
   save(data);
 
-  // Маппим attendance под Google Форму
   const googleAttendance = GOOGLE_ATTENDANCE_MAP[data.attendance] || data.attendance;
 
-  // Отправляем в Google Форму
   const formData = new FormData();
   formData.append(FIELD_IDS.name, data.name);
   formData.append(FIELD_IDS.attendance, googleAttendance);
-  formData.append(FIELD_IDS.guests, String(data.guests));
+  formData.append(FIELD_IDS.guests, '1');   // всегда 1
   formData.append(FIELD_IDS.note, data.note);
 
   setStatus("Отправляем ваш ответ...");
@@ -201,7 +180,6 @@ form?.addEventListener("submit", (e) => {
     });
 });
 
-// Кнопка скачивания JSON
 downloadBtn?.addEventListener("click", () => {
   const data = loadSaved();
   if (!data) {
